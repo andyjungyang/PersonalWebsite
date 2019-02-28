@@ -1,0 +1,44 @@
+{
+  "name": "personalwebsite",
+  "version": "1.0.0",
+  "description": "Personal Website by Jung Yang",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "dev": "pm2 start src/server.js --watch --interpreter babel-node"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/jyang99/PersonalWebsite.git"
+  },
+  "author": "Jung Yang",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/jyang99/PersonalWebsite/issues"
+  },
+  "homepage": "https://github.com/jyang99/PersonalWebsite#readme",
+  "dependencies": {
+    "@babel/polyfill": "^7.2.5",
+    "babel-loader": "^8.0.5",
+    "ejs": "^2.6.1",
+    "express": "^4.16.4",
+    "pm2": "^3.3.1",
+    "react": "^16.8.3",
+    "react-bootstrap": "^1.0.0-beta.5",
+    "react-dom": "^16.8.3",
+    "webpack": "^4.29.5"
+  },
+  "devDependencies": {
+    "@babel/cli": "^7.2.3",
+    "@babel/core": "^7.3.4",
+    "@babel/node": "^7.2.2",
+    "@babel/preset-env": "^7.3.4",
+    "@babel/preset-react": "^7.0.0",
+    "babel-eslint": "^10.0.1",
+    "eslint": "^5.14.1",
+    "eslint-config-airbnb": "^17.1.0",
+    "eslint-plugin-import": "^2.16.0",
+    "eslint-plugin-jsx-a11y": "^6.2.1",
+    "eslint-plugin-react": "^7.12.4"
+  }
+}
