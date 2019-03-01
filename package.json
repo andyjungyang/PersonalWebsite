@@ -6,7 +6,10 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "dev": "pm2 start src/server.js --watch --interpreter babel-node",
-    "webpack": "webpack -wd"
+    "webpack": "webpack -wd",
+    "build": "npm run clean && webpack -p && babel src -d build --copy-files",
+    "prod": "pm2 start build/server.js -i max --name personalWeb",
+    "clean": "rm -rf build && rm -rf public"
   },
   "repository": {
     "type": "git",
