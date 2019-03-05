@@ -1,36 +1,33 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import Container from 'react-bootstrap/Container';
 import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
 import ContactCard from './ContactCard';
 
-function Contact() {
+function Contact({ data }) {
+  const contactItems = data.map(item => (
+    <Col key={item.title}>
+      <ContactCard
+        {...item}
+      />
+    </Col>
+  ));
   return (
     <Container className="px-3">
       <Row>
-        <Col>
-          <ContactCard
-            title="Phone"
-            logo="fas fa-phone"
-            color="info"
-          />
-        </Col>
-        <Col>
-          <ContactCard
-            title="Email"
-            logo="far fa-envelope"
-          />
-        </Col>
-        <Col>
-          <ContactCard
-            title="LinkedIn"
-            logo="fab fa-linkedin"
-            color="primary"
-          />
-        </Col>
+        {contactItems}
       </Row>
     </Container>
   );
 }
+
+Contact.propTypes = {
+  data: PropTypes.arrayOf(PropTypes.object),
+};
+
+Contact.defaultProps = {
+  data: [],
+};
 
 export default Contact;

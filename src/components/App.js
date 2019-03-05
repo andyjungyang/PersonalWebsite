@@ -16,7 +16,10 @@ function App({ data }) {
           path="/resume"
           render={() => <Resume data={data.resume} />}
         />
-        <Route path="/contact/" component={Contact} />
+        <Route
+          path="/contact/"
+          render={() => <Contact data={data.contact} />}
+        />
       </div>
     </Router>
   );
