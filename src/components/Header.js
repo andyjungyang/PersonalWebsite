@@ -10,7 +10,7 @@ function Header() {
         <Navbar.Brand href="/">Andy Yang</Navbar.Brand>
         <Nav className="mr-auto">
           <Link className="nav-link" to="/">Home</Link>
-          <Link className="nav-link" to="/exp">Experiences</Link>
+          <Link className="nav-link" to="/resume">Resume</Link>
           <Link className="nav-link" to="/contact">Contact</Link>
         </Nav>
       </Navbar>

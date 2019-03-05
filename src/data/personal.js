@@ -1,5 +1,5 @@
 const data = {
-  experiences: [
+  resume: [
     {
       title: 'Mild Beast Games',
       date: 'Febuary 2019',

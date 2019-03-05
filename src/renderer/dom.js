@@ -4,9 +4,7 @@ import App from '../components/App';
 
 import data from '../data/personal';
 
-console.log(data);
-
 ReactDOM.render(
-  <App />,
+  <App data={data} />,
   document.getElementById('root'),
 );
