@@ -1,12 +1,23 @@
 import React from 'react';
 import Card from 'react-bootstrap/Card';
+import Button from 'react-bootstrap/Button';
 import { CopyToClipboard } from 'react-copy-to-clipboard';
 import PropTypes from 'prop-types';
 import '../css/ContactCard.css';
 
 function ContactCard({
-  title, content, color, logo,
+  title, content, color, logo, isLink,
 }) {
+  let contentLink;
+  if (isLink) {
+    contentLink = (
+      <Button target="_blank" variant={color} href={`//${content}`}>
+        {content}
+      </Button>
+    );
+  } else {
+    contentLink = content;
+  }
   return (
     <Card bg={color} text="white" className="mt-3">
       <Card.Header className="d-flex justify-content-between">
@@ -21,7 +32,7 @@ function ContactCard({
         </div>
       </Card.Header>
       <Card.Body>
-        <Card.Text>{content}</Card.Text>
+        <Card.Text>{contentLink}</Card.Text>
       </Card.Body>
     </Card>
   );
@@ -32,12 +43,14 @@ ContactCard.propTypes = {
   content: PropTypes.string,
   color: PropTypes.string,
   logo: PropTypes.string,
+  isLink: PropTypes.bool,
 };
 
 ContactCard.defaultProps = {
   content: '',
   color: 'success',
   logo: '',
+  isLink: false,
 };
 
 export default ContactCard;

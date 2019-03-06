@@ -11,7 +11,11 @@ function App({ data }) {
     <Router>
       <div>
         <Header />
-        <Route exact path="/" component={Home} />
+        <Route
+          exact
+          path="/"
+          render={() => <Home {...data.home} />}
+        />
         <Route
           path="/resume"
           render={() => <Resume data={data.resume} />}

@@ -1,16 +1,14 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import Container from 'react-bootstrap/Container';
+import ResumeRow from './ResumeRow';
 
 function Resume({ data }) {
   const resumeItems = data.map(item => (
-    <div key={item.title}>
-      {item.title}
-      {' '}
-      {item.date}
-      {' '}
-      {item.position}
-    </div>
+    <ResumeRow
+      {...item}
+      key={item.title}
+    />
   ));
   return (
     <Container className="py-3 px-3">
