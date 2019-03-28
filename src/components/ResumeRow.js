@@ -66,7 +66,7 @@ ResumeRow.propTypes = {
 ResumeRow.defaultProps = {
   date: '',
   position: '',
-  body: '',
+  body: [],
   location: '',
   image: '',
   border: '',

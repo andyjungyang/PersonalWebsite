@@ -6,13 +6,18 @@ import Link from 'react-router-dom/Link';
 function Header() {
   return (
     <div>
-      <Navbar bg="dark" variant="dark">
+      <Navbar expand="sm" bg="dark" variant="dark">
         <Navbar.Brand href="/">Andy Yang</Navbar.Brand>
-        <Nav className="mr-auto">
-          <Link className="nav-link" to="/">Home</Link>
-          <Link className="nav-link" to="/resume">Resume</Link>
-          <Link className="nav-link" to="/contact">Contact</Link>
-        </Nav>
+        <Navbar.Toggle aria-controls="responsive-navbar-nav" />
+        <Navbar.Collapse id="responsive-navbar-nav">
+          <Nav className="mr-auto">
+            <Link className="nav-link" to="/">Home</Link>
+            <Link className="nav-link" to="/resume">Resume</Link>
+            <Link className="nav-link" to="/contact">Contact</Link>
+            <Link className="nav-link" to="/projects">Projects</Link>
+            <Link className="nav-link" to="/blog">Blog</Link>
+          </Nav>
+        </Navbar.Collapse>
       </Navbar>
     </div>
   );
