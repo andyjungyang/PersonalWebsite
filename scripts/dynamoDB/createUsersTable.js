@@ -1,7 +1,7 @@
 import AWS from 'aws-sdk';
 
 AWS.config.update({
-  region: 'us-west-2',
+  region: 'us-east-1',
 });
 
 const dynamodb = new AWS.DynamoDB();
@@ -27,3 +27,5 @@ dynamodb.createTable(params, (err, data) => {
     console.log('Created table. Table description JSON:', JSON.stringify(data, null, 2));
   }
 });
+
+export default dynamodb;

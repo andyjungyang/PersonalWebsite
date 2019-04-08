@@ -17,4 +17,4 @@ passport.deserializeUser((obj, cb) => {
   cb(null, obj);
 });
 
-module.exports = passport;
+export default passport;
