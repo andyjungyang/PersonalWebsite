@@ -1,15 +1,19 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import CardColumns from 'react-bootstrap/CardColumns';
-import ContactCard from './ContactCard';
+import EditContactCardContainer from './EditContactCardContainer';
 
-function Contact({ data }) {
+function EditContacts({ data }) {
   const contactItems = data.map(item => (
-    <ContactCard
+    <EditContactCardContainer
       {...item}
       key={item.title}
     />
   ));
+  const newContactCard = (
+    <EditContactCardContainer key="New" />
+  );
+  contactItems.push(newContactCard);
   return (
     <CardColumns className="px-3">
       {contactItems}
@@ -17,12 +21,12 @@ function Contact({ data }) {
   );
 }
 
-Contact.propTypes = {
+EditContacts.propTypes = {
   data: PropTypes.arrayOf(PropTypes.object),
 };
 
-Contact.defaultProps = {
+EditContacts.defaultProps = {
   data: [],
 };
 
-export default Contact;
+export default EditContacts;

@@ -3,6 +3,7 @@ const path = require('path');
 module.exports = {
   entry: {
     app: ['./src/renderer/dom.js'],
+    edit: ['./src/renderer/domEdit.js'],
   },
   output: {
     path: path.resolve(__dirname, 'public'),

@@ -52,7 +52,7 @@
       "border": "secondary"
     }
   ],
-  "contact": [
+  "contacts": [
     {
       "title": "Phone",
       "logo": "fas fa-phone",
@@ -62,10 +62,11 @@
     {
       "title": "Email",
       "logo": "far fa-envelope",
+      "color": "success",
       "content": "andyjungyang@gmail.com"
     },
     {
-      "title": "LindeIn",
+      "title": "LinkedIn",
       "logo": "fab fa-linkedin",
       "color": "primary",
       "content": "linkedin.com/in/andy-yang-16380691",

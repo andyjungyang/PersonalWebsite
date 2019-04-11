@@ -3,12 +3,12 @@ import { BrowserRouter as Router, Route } from 'react-router-dom';
 import PropTypes from 'prop-types';
 import Header from './Header';
 import Home from './Home';
-import Contacts from './Contacts';
+import EditContacts from './EditContacts';
 import Resume from './Resume';
 
-function App({ data }) {
+function EditApp({ data }) {
   return (
-    <Router>
+    <Router basename="/edit">
       <div>
         <Header />
         <Route
@@ -22,21 +22,21 @@ function App({ data }) {
         />
         <Route
           path="/contact"
-          render={() => <Contacts data={data.contacts} />}
+          render={() => <EditContacts data={data.contacts} />}
         />
       </div>
     </Router>
   );
 }
 
-App.propTypes = {
+EditApp.propTypes = {
   data: PropTypes.shape({
     resume: PropTypes.array,
   }),
 };
 
-App.defaultProps = {
+EditApp.defaultProps = {
   data: {},
 };
 
-export default App;
+export default EditApp;

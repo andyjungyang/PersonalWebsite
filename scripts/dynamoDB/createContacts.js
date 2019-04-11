@@ -1,18 +1,19 @@
 import AWS from 'aws-sdk';
+import {} from 'dotenv/config';
 
 AWS.config.update({
-  region: 'us-east-1',
+  region: process.env.AWS_REGION,
 });
 
 const dynamodb = new AWS.DynamoDB();
 
 const params = {
-  TableName: 'Users',
+  TableName: 'Contacts',
   KeySchema: [
-    { AttributeName: 'UserID', KeyType: 'HASH' },
+    { AttributeName: 'Title', KeyType: 'HASH' },
   ],
   AttributeDefinitions: [
-    { AttributeName: 'UserID', AttributeType: 'S' },
+    { AttributeName: 'Title', AttributeType: 'S' },
   ],
   ProvisionedThroughput: {
     ReadCapacityUnits: 10,
@@ -27,5 +28,3 @@ dynamodb.createTable(params, (err, data) => {
     console.log('Created table. Table description JSON:', JSON.stringify(data, null, 2));
   }
 });
-
-export default dynamodb;

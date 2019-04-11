@@ -4,4 +4,13 @@
 
 .fa-copy {
   cursor: pointer;
+  padding-left: .5rem;
+}
+
+.fa-edit:hover {
+  color: rgba(50, 50, 50, 0.5);
+}
+
+.fa-edit {
+  cursor: pointer;
 }

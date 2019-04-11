@@ -1,8 +1,8 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import App from '../components/App';
+import EditApp from '../components/EditApp';
 
 ReactDOM.render(
-  <App data={window.initialData} />,
+  <EditApp data={window.initialData} />,
   document.getElementById('root'),
 );
