@@ -60,7 +60,7 @@ app.get('/edit*', async (req, res) => {
   } catch (err) {
     console.error('Scanning failed. Error JSON:', JSON.stringify(err, null, 2));
   }
-  if ((!req.user || !req.user.IsAdmin) && process.env.SERVER_ENV !== 'dev') {
+  if ((!req.user || !req.user.isAdmin) && process.env.SERVER_ENV !== 'dev') {
     res.redirect('/');
   } else {
     res.render('edit', { initialData });
