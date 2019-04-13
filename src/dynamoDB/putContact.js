@@ -11,11 +11,7 @@ async function putContact(contact) {
   const params = {
     TableName,
     Item: {
-      Title: contact.title,
-      Content: contact.content,
-      Logo: contact.logo,
-      Color: contact.color,
-      IsLink: contact.isLink,
+      ...contact,
     },
   };
   await docClient.put(params).promise();

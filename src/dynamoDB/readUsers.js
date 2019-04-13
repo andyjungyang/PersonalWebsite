@@ -7,11 +7,11 @@ AWS.config.update({
 const docClient = new AWS.DynamoDB.DocumentClient();
 const TableName = 'Users';
 
-function readUsers(UserID) {
+function readUsers(userID) {
   const params = {
     TableName,
     Key: {
-      UserID,
+      userID,
     },
   };
   return docClient.get(params).promise();

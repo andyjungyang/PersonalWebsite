@@ -1,7 +1,8 @@
 import React from 'react';
-import '../css/ContactCard.css';
+import axios from 'axios';
 import EditContactCard from './EditContactCard';
 import ContactCard from './ContactCard';
+import '../css/ContactCard.css';
 
 class EditContactCardContainer extends React.Component {
   constructor(props) {
@@ -24,7 +25,8 @@ class EditContactCardContainer extends React.Component {
     this.setState({ editing: false });
   }
 
-  handleSubmit(values) {
+  async handleSubmit(values) {
+    await axios.post('/contact', values);
     this.setState({ editing: false, ...values });
   }
 

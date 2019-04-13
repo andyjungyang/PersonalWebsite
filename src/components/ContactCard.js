@@ -54,7 +54,7 @@ ContactCard.propTypes = {
   logo: PropTypes.string,
   isLink: PropTypes.bool,
   canEdit: PropTypes.bool,
-  handleEdit: PropTypes.func.isRequired,
+  handleEdit: PropTypes.func,
 };
 
 ContactCard.defaultProps = {
@@ -64,6 +64,7 @@ ContactCard.defaultProps = {
   logo: '',
   isLink: false,
   canEdit: false,
+  handleEdit: () => {},
 };
 
 export default ContactCard;

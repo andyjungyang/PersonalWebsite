@@ -11,8 +11,8 @@ async function putUser(profile) {
   const params = {
     TableName,
     Item: {
-      UserID: profile.id,
-      Name: profile.displayName,
+      userID: profile.id,
+      name: profile.displayName,
     },
   };
   await docClient.put(params).promise();

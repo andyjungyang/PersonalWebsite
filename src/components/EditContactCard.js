@@ -15,12 +15,12 @@ function EditContactCard({
           initialValues={{
             title, content, color, logo, isLink,
           }}
-          onSubmit={(values, actions) => {
+          onSubmit={async (values, actions) => {
             try {
-              handleSubmit(values);
+              await handleSubmit(values);
             } catch (err) {
               actions.setSubmitting(false);
-              actions.setStatus({ msg: JSON.stringify(err, null, 2) });
+              actions.setStatus({ msg: 'Submit Failed' });
             }
           }}
           render={({ status, isSubmitting }) => (

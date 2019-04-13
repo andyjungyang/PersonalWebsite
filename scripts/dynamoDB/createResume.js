@@ -10,12 +10,12 @@ const dynamodb = new AWS.DynamoDB();
 const params = {
   TableName: 'Resume',
   KeySchema: [
-    { AttributeName: 'Company', KeyType: 'HASH' },
-    { AttributeName: 'Time', KeyType: 'RANGE' },
+    { AttributeName: 'company', KeyType: 'HASH' },
+    { AttributeName: 'time', KeyType: 'RANGE' },
   ],
   AttributeDefinitions: [
-    { AttributeName: 'Company', AttributeType: 'S' },
-    { AttributeName: 'Time', AttributeType: 'S' },
+    { AttributeName: 'company', AttributeType: 'S' },
+    { AttributeName: 'time', AttributeType: 'S' },
   ],
   ProvisionedThroughput: {
     ReadCapacityUnits: 10,

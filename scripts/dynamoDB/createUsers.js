@@ -10,10 +10,10 @@ const dynamodb = new AWS.DynamoDB();
 const params = {
   TableName: 'Users',
   KeySchema: [
-    { AttributeName: 'UserID', KeyType: 'HASH' },
+    { AttributeName: 'userID', KeyType: 'HASH' },
   ],
   AttributeDefinitions: [
-    { AttributeName: 'UserID', AttributeType: 'N' },
+    { AttributeName: 'userID', AttributeType: 'N' },
   ],
   ProvisionedThroughput: {
     ReadCapacityUnits: 10,
