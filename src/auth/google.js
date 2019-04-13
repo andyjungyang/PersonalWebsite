@@ -10,11 +10,12 @@ passport.use(new GoogleStrategy({
   callbackURL: '/auth/google/callback',
 }, async (accessToken, refreshToken, profile, cb) => {
   try {
-    let result = await readUsers(profile.id);
+    const userID = parseInt(profile.id, 10);
+    let result = await readUsers(userID);
     if (result.Item !== undefined && result.Item !== null) {
       return cb(null, result.Item);
     }
-    result = await putUser(profile);
+    result = await putUser(userID, profile.displayName);
     return cb(null, result);
   } catch (err) {
     return cb(err);
@@ -22,7 +23,7 @@ passport.use(new GoogleStrategy({
 }));
 
 passport.serializeUser((user, cb) => {
-  cb(null, user.UserID);
+  cb(null, user.userID);
 });
 
 passport.deserializeUser(async (id, cb) => {

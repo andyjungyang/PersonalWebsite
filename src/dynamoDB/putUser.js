@@ -7,12 +7,12 @@ AWS.config.update({
 const docClient = new AWS.DynamoDB.DocumentClient();
 const TableName = 'Users';
 
-async function putUser(profile) {
+async function putUser(userID, name) {
   const params = {
     TableName,
     Item: {
-      userID: profile.id,
-      name: profile.displayName,
+      userID,
+      name,
     },
   };
   await docClient.put(params).promise();
