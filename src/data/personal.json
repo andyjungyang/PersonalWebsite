@@ -6,8 +6,19 @@
   },
   "resume": [
     {
+      "title": "New York University",
+      "date": "Aug. 2019 - Current",
+      "position": "Student",
+      "location": "Brooklyn, New York",
+      "body": [
+        "Master of Science in Computer Engineering"
+      ],
+      "image": "https://image.flaticon.com/icons/png/512/42/42972.png",
+      "border": "primary"
+    },
+    {
       "title": "Mild Beast Games",
-      "date": "Feb. 2019 - Current",
+      "date": "Feb. 2019 - May. 2019",
       "position": "Software Engineer",
       "body": [
         "Develop JS web service for calculating game economics"
